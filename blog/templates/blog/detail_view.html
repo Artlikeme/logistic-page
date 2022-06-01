@@ -1,0 +1,36 @@
+{% extends 'main/default.html' %}
+
+{% load static %}
+
+
+{%  block title %}{{article.title}}{% endblock %}
+
+
+{% block content %}
+
+
+    {% include 'main/modules/header.html' %}
+
+
+    <!-- Header -->
+
+    <div class="intro intro--blog" id="intro"></div>
+
+
+    <!-- Main -->
+
+
+    <div class="section section--last">
+        <div class="container">
+                    <h1 class="section__title section_title_blog">{{article.title}}</h1>
+                    <div class="section">
+                        <div class="articles__text">{{article.full_text}}</div>
+                        <time class="articles__date" datetime="2019-03-21 19:00">{{article.date}}</time>
+                    </div>
+
+                    <a href="{% url 'blog' %}" class="btn btn--grad"><span>Back to articles</span></a>
+        </div>
+    </div>
+
+
+{% endblock %}

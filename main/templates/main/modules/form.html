@@ -1,0 +1,22 @@
+<div class="request-form__content">
+    <form class="form" method="post">
+        {% csrf_token %}
+        <div class="form__group">
+            <!-- <input class="input input--user" type="text" placeholder="Your name"> -->
+            {{ form.name }}
+        </div>
+        <div class="form__group">
+            <!-- <input class="input input--phone" type="tel" placeholder="Your phone"> -->
+            {{ form.phone }}
+        </div>
+        <div class="form__group">
+            <!-- <input class="input input--email" type="email" placeholder="Your e-mail"> -->
+            {{ form.email }}
+
+        </div>
+        <div class="form-group">{{error}}</div>
+        <button class="btn btn--full btn--grad btn--block" type="submit">
+            <span>Call me back</span>
+        </button>
+    </form>
+</div> 

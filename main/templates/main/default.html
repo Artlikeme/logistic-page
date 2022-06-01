@@ -1,0 +1,126 @@
+{% load static %} 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%  static 'main/css/slick.css' %}">
+    <link rel="stylesheet" href="{%  static 'main/css/aos.css' %}">
+    <link rel="stylesheet" href="{%  static 'main/css/style.css' %}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'main/images/favicons/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'main/images/favicons/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'main/images/favicons/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'main/images/favicons/manifest.json' %}">
+    <link rel="mask-icon" href="{% static 'main/images/favicons/safari-pinned-tab.svg' %}" color="#004AF2">
+    <meta name="msapplication-TileColor" content="#004AF2">
+    <meta name="theme-color" content="#004AF2">
+
+        <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    {% block content %}
+    {% endblock %}
+
+    <!-- Footer -->
+
+
+    <footer class="footer">
+        <div class="container">
+            <a class="header__logo dark" href="{% url 'index' %}">
+                <img src="{%  static 'main/images/logo-black.svg' %}" alt="">
+                <span class="header__title">CenterLogistic</span>
+            </a>
+            <address class="footer__address">
+                <p>New York, Street, ZIP code
+                </p>
+                <p>Call Us: <a href="tel:+9948373123">+9948373123</a> or E-mail: <a href="mailto:hello@centerlogistic.com">hello@centerlogistic.com</a></p>
+            </address>
+
+            <nav class="footer__nav">
+                <a href="{% url 'terms' %}">Terms &amp; Contidions</a>
+                <a href="{% url 'privacy' %}">Privacy Policy</a>
+                <a href="{% url 'blog' %}">Our blog</a>
+            </nav>
+        </div><!-- /.container -->
+    </footer>
+
+
+    <!-- Modals -->
+
+
+    <div class="modal"  id="becomeClientModal">
+        <div class="modal__inner">
+            <div class="modal__content ">
+                <div class="modal__header">
+                    <h4 class="modal__title">Need to deliver your cargo?<br>
+                        We can help!</h4>
+                    <div class="modal__text">Fill a little form and we will call you back!</div>
+                </div>
+                <form class="form" action="/" method="post">
+                    <div class="form__group">
+                        <input class="input input--dark input--user" type="text" placeholder="Your name">
+                    </div>
+                    <div class="form__group">
+                        <input class="input input--dark input--phone" type="tel" placeholder="Your phone">
+                    </div>
+                    <div class="form__group">
+                        <input class="input input--dark input--email" type="email" placeholder="Your e-mail">
+                    </div>
+                    <button class="btn btn--full btn--grad btn--block" type="submit">
+                        <span>Call me back</span>
+                    </button>
+                </form>
+
+                <div class="modal__footer">
+                    <h4 class="modal__footer-title">Our contacts</h4>
+                    <address class="modal__contacts">New York, Street, ZIP code <br>
+                        Phone: <a href="tel:+9948373123">+9948373123</a> <br>
+                        E-mail: <a href="mailto:hello@centerlogistic.com">hello@centerlogistic.com</a></address>
+                </div>
+
+                <button class="modal__close" type="button" data-modal-close>
+                    <img src="{%  static 'main/images/close.svg' %}" alt="Close">
+                </button>
+            </div>
+        </div><!-- /.modal__inner -->
+    </div><!-- /.modal -->
+
+
+    <div class="modal" id="thanksClientModal">
+        <div class="modal__inner">
+            <div class="modal__content">
+                <div class="modal__header">
+                    <img class="modal__icon" src="{%  static 'main/images/tick.svg' %}" alt="">
+                    <h4 class="modal__title">Thanks for your request</h4>
+                    <div class="modal__text">We call you back as soon as possible!</div>
+                </div>
+                <div class="modal__footer">
+                    <h4 class="modal__footer-title">Our contacts</h4>
+                    <address class="modal__contacts">New York, Street, ZIP code <br>
+                        Phone: <a href="tel:+9948373123">+9948373123</a> <br>
+                        E-mail: <a href="mailto:hello@centerlogistic.com">hello@centerlogistic.com</a></address>
+                </div>
+
+                <button class="modal__close" type="button" data-modal-close>
+                    <img src="{%  static 'main/images/close.svg' %}" alt="Close">
+                </button>
+            </div>
+        </div><!-- /.modal__inner -->
+    </div><!-- /.modal -->
+
+
+
+    <!-- JavaScript -->
+    <script src="{%  static 'main/js/jquery-3.4.1.min.js' %}"></script>
+    <script src="{%  static 'main/js/slick.min.js' %}"></script>
+    <script src="{%  static 'main/js/aos.js' %}"></script>
+    <script src="{%  static 'main/js/app.js' %}"></script>
+</body>
+</html>

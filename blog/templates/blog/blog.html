@@ -1,0 +1,58 @@
+{% extends 'main/default.html' %}
+
+{% load static %}
+
+
+{%  block title %}Blog{% endblock %}
+
+
+{% block content %}
+
+
+    {% include 'main/modules/header.html' %}
+
+
+    <!-- Header -->
+
+    <div class="intro intro--blog" id="intro"></div>
+
+
+    <!-- Main -->
+
+
+    <div class="section section--last">
+        <div class="container">
+            <main class="main">
+                <div class="main--col main--col-left">
+                    <h1 class="section__title"><span>Interesting</span> to read</h1>
+                    <div class="articles article--colum">
+                        {% for el in articles %}
+                            <article class="articles__item">
+                                <h4 class="articles__title">
+                                    <a href="{% url 'article-detail' el.id %}">{{el.title}}</a>
+                                </h4>
+                                <div class="articles__text">{{el.article_info}}...</div>
+                                <time class="articles__date" datetime="2019-03-21 19:00">{{el.date}}</time>
+                            </article>
+                        {% endfor %}
+                    </div>
+
+                    <a href="/" class="btn btn--grad"><span>Back to home </span></a>
+                 </div>
+                <div class="main--col main--col-right">
+                    <div class="request-form request-form--right">
+                        <div class="request-form__header">
+                            <h3 class="request-form__header__title">Get Callback</h3>
+                            <div class="request-form__header__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut</div>
+                        </div>
+
+                        {% include 'main/modules/form.html' %}
+                        
+                    </div> 
+                </div>
+            </main> 
+        </div>
+    </div>
+
+
+{% endblock %}

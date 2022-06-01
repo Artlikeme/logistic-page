@@ -1,0 +1,27 @@
+{% load static %}
+
+
+<!-- Header -->
+
+
+<header class="header" id="header">
+    <div class="container">
+        <div class="header__inner">
+            <a class="header__logo" href="/">
+                <img src="{%  static 'main/images/logo.svg' %}" alt="">
+                <span class="header__title">CenterLogistic</span>
+            </a>
+
+            <nav class="nav" id="nav">
+                <a href="{% url 'index' %}" class="nav__link">Home page</a>
+                <a href="{% url 'blog' %}" class="nav__link" id="blogactive">Blog</a>
+                <a href="{% url 'privacy' %}" class="nav__link" id="privacyactive">Privacy Policy</a>
+                <a href="{% url 'terms' %}" class="nav__link" id="termsactive">Terms &amp; Conditions</a>
+            </nav>
+
+            <button class="burger" type="button" id="navToggle">
+                <img class="burger__icon" src="{%  static 'main/images/burger.svg' %}" alt="">
+            </button>
+        </div>
+    </div><!-- container -->
+</header>
